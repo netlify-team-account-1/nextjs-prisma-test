@@ -17,6 +17,7 @@ export default async function handler(
     return response.status(200).json({total})
   } catch (e: unknown) {
     if (e instanceof Error) {
+      console.error(e)
       return response.status(500).json({message: e.message})
     }
     return response.status(500).json({message: 'An error has occured.'})

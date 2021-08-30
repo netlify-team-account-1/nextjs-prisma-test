@@ -1,13 +1,12 @@
-datasource db {
-  provider = "mysql"
-  url = env("DATABASE_URL")
-  planetScaleMode = true
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["planetScaleMode"]
+  binaryTargets   = ["native", "rhel-openssl-1.0.x"]
 }
 
-generator client {
-  provider = "prisma-client-js"
-  previewFeatures = ["planetScaleMode"]
-  binaryTargets = ["native", "rhel-openssl-1.0.x"]
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
 }
 
 model views {
