@@ -1,0 +1,17 @@
+datasource db {
+  provider = "mysql"
+  url = env("DATABASE_URL")
+  planetScaleMode = true
+}
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["planetScaleMode"]
+  binaryTargets = ["native", "rhel-openssl-1.0.x"]
+}
+
+model views {
+  id    BigInt @id @default(autoincrement())
+  slug  String @db.VarChar(1024)
+  count BigInt @default(0)
+}
