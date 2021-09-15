@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "fix-prisma": "sed -i 's#'\"node_modules/.prisma/client\"',#\"node_modules/.prisma/client\",#' node_modules/.prisma/client/index.js",
-    "build": "npm run fix-prisma && next build",
+    "build": "node fix-prisma-client.js && next build",
     "start": "next start",
     "lint": "next lint"
   },
